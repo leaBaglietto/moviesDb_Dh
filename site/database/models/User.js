@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes)=>{
-    let alias = 'actors';
+    let alias = 'users';
     let columns = {
         id: {
             type: dataTypes.INTEGER,
@@ -46,26 +46,4 @@ module.exports = (sequelize, dataTypes)=>{
         tableName : 'users',
         timestamps : true
     };
-// Relacion de tablas 
-    const User = sequelize.define(alias, columns, config);
-
-    User.associate = function(models) {
-
-        User.belongsTo(models.Movies, {
-            as: "movies",
-            foreignKey : "id"
-        }); // de 1 a muchos
-
-        User.belongsTo(models.Genres, {
-            as: "genres",
-            foreignKey : "id"
-        }); // de 1 a muchos
-
-        User.belongsTo(models.Actors, {
-            as: "actors",
-            foreignKey : "id"
-        }); // de 1 a muchos
-
-    }
-    return User;
 }
