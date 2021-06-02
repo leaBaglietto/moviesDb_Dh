@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('partials/head') %>
+        <title>cineZeta - ingresar</title>
+            </head>
+
+    <body>
+        <!--HEADER-->
+        <%- include('partials/header') %>
+            <!-- FIN HEADER -->
+
+            <!--FORMULARIO-->
+    <div class="container-form">
+        <!--LOGIN-->
+            <form class="formulario-login" action="/login/enter" method="POST" id="form" >
+                <div class="control-form">
+                    <label></label>
+                    <input type="text" name="email" class="control" placeholder="ingrese su mail" id="email">
+<!--                     <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small> -->
+
+                </div>
+    
+                <div class="control-form">
+                    <label></label>
+                    <input type="password" name="password" class="control" placeholder="contraseña" id="password">
+<!--                     <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small> -->
+
+                </div>
+                     <button class="control-button" type="submit"> Ingresar </button>
+            </form> 
+        </div>
+
+    </body>
+
+</html>

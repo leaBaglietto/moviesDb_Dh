@@ -18,7 +18,13 @@ module.exports = (sequelize, dataTypes)=>{
         },
 
         password: {
-            type: dataTypes.STRING
+            type: dataTypes.STRING,
+            allowNull: false
+        },
+
+        remember_token: {
+            type: dataTypes.STRING,
+            allowNull: false
         },
 
         created_at: {

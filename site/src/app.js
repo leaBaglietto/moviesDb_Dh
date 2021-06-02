@@ -6,7 +6,7 @@ const app = express();
 
 app.listen (3030, () => {
     console.log ('-------- BIENVENIDOS CINE ZETA --------');
-    console.log ('El mejor catalogo de películas en localhost:3030');
+    console.log ('El mejor catalogo de películas en http://localhost:3030');
     console.log ('--- #silloneandoConCineZeta ---')
 });
 
@@ -23,3 +23,5 @@ const movieRoutes=require('./routes/movieRoutes');
 
 app.use('/', movieRoutes);
 app.use('/detailMovie', movieRoutes);
+app.use('/register', movieRoutes);
+app.use('/login', movieRoutes);

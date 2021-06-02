@@ -120,3 +120,86 @@ margin: auto;
 hr {
     border-bottom: solid 1px rgb(255, 195, 0);
 }
+
+
+/* CSS FORMULARIO DE REGISTRO */ 
+
+.container-form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin: 200px auto;
+    width: 80%;
+    height: auto;
+    text-align: center;
+}
+
+.formulario-registro {
+margin: 10px 50x;
+}
+.formulario-login {
+    margin: 10px 50px;
+    }    
+
+.control-form {
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.control-form label {
+    display: inline-block;
+    border: none;
+}
+
+
+.control-form input {
+    color: rgb(255, 195, 0);
+    padding: 20px;
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+    border: rgb(255, 195, 0);
+    border-bottom: 1px solid rgb(255, 195, 0);
+    background-color: rgb(88, 24, 69);
+}
+.control-button {
+    width: 150px;
+    height: 30px;
+    border-radius: 25px;
+    background-color: rgb(255, 195, 0)d;
+    border: 1px solid rgb(88, 24, 69);
+    margin-top: 40px;
+}
+
+.control-form input:focus {
+    outline: 0;
+    border-color: red;
+}
+
+.control-form.success input {
+    border-color: greenyellow;
+}
+
+.control-form i {
+    visibility: hidden;
+}
+
+.control-form.success i.fa-check-circle {
+    color:greenyellow;
+    visibility: visible;
+}
+
+.control-form.error i.fa-exclamation-circle {
+    color: red;
+    visibility: visible;
+}
+
+.control-form small {
+    color: red;
+    visibility: hidden;
+}
+
+.control-form.error small {
+    visibility: visible;
+}

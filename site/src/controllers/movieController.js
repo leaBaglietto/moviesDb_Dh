@@ -5,7 +5,15 @@ const controller = {
 
     detailMovie: (req,res) => {
         res.render('detailmovie');
-        }
+        },
+
+    register: (req,res) => {
+        res.render('register');
+        },
+
+        login: (req,res) => {
+            res.render('login');
+            },
   
 };
 
