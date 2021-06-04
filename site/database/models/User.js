@@ -1,5 +1,5 @@
-module.exports = (sequelize, dataTypes)=>{
-    let alias = 'users';
+/* module.exports = (sequelize, dataTypes)=>{
+    let alias = 'User';
     let columns = {
         id: {
             type: dataTypes.INTEGER,
@@ -46,4 +46,5 @@ module.exports = (sequelize, dataTypes)=>{
         tableName : 'users',
         timestamps : true
     };
-}
+    return User;
+} */

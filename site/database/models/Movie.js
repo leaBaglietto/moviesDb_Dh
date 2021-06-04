@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes)=>{
-    let alias = 'movies';
-    let columns = {
+    let alias = 'Movie';
+    let cols = {
         id: {
             type: dataTypes.INTEGER,
             primaryKey:  true,
@@ -22,7 +22,7 @@ module.exports = (sequelize, dataTypes)=>{
         },
 
         rating: {
-            type: dataTypes.DECIMAL (10,2),
+            type: dataTypes.DOUBLE,
             allowNull: false
         },
 
@@ -54,22 +54,26 @@ module.exports = (sequelize, dataTypes)=>{
         timestamps : true
     };
 // Relacion de tablas 
-    const Movie = sequelize.define(alias, columns, config);
+    const Movie = sequelize.define(alias, cols, config);
 
-    Movie.associate = function(models) {
-        Movie.belongsTo(models.Genres, {
-            as: "genres",
-            foreignKey : "id"
-        }); // de 1 a muchos
+        Movie.associate = function(models) {
+            Movie.belongsTo(models.Genre, {
+                as: "genre",
+                foreignKey : "genre_id"
+            }); // de 1 a muchos
+            
+            Movie.belongsToMany(models.Actor, {
+                as: "actors",
+                through: "actor_movie",
+                foreignKey : "movie_id",
+                otherKey: "actor_id",
+                timestamps: true // La tabla pivot tiene timestamp
+            }); // de Muchos a muchos
 
-        Movie.hasMany(models.Actors, {
+        /* Movie.hasMany(models.Actors, {
             as: "actors",
             foreignKey : "id"
-        }) // de muchos a 1
-
-
-
-
+        }) // de muchos a 1 */
     }
     return Movie;
 }

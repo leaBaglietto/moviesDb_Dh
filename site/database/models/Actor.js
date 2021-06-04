@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes)=>{
-    let alias = 'actors';
-    let columns = {
+    let alias = 'Actor';
+    let cols = {
         id: {
             type: dataTypes.INTEGER,
             primaryKey:  true,
@@ -27,7 +27,7 @@ module.exports = (sequelize, dataTypes)=>{
         },
 
         rating: {
-            type: dataTypes.DECIMAL (1,1),
+            type: dataTypes.DOUBLE,
             allowNull: false
         },
 
@@ -44,15 +44,24 @@ module.exports = (sequelize, dataTypes)=>{
         timestamps : true
     };
 // Relacion de tablas 
-    const Actor = sequelize.define(alias, columns, config);
+    const Actor = sequelize.define(alias, cols, config);
 
     Actor.associate = function(models) {
-/*         Actor.belongsTo(models.Genres, {
+
+        Actor.belongsToMany(models.Movie, {
+            as: "movies",
+            through: "actor_movie",
+            foreignKey : "actor_id",
+            otherKey: "movie_id",
+            timestamps: true // la tabla intermedia tiene timestamps
+        }); // de Muchos a muchos
+        
+        /*         Actor.belongsTo(models.Genres, {
             as: "genres",
             foreignKey : "id"
         }); */ // de 1 a muchos
 
-        Actor.belongsTo(models.Movies, {
+        /* Actor.belongsTo(models.Movies, {
             as: "movies",
             foreignKey : "id"
         }); // de 1 a muchos
@@ -61,7 +70,7 @@ module.exports = (sequelize, dataTypes)=>{
             as: "movies",
             foreignKey : "id"
         }) // de muchos a 1
-
+ */
     }
     return Actor;
 }

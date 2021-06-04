@@ -18,10 +18,12 @@ app.set('view engine', 'ejs');
 app.set('views', './views');
 
 //Rutas
-const movieRoutes=require('./routes/movieRoutes');
+ const movieRoutes=require('./routes/movieRoutes');
 
 
-app.use('/', movieRoutes);
+/* app.use('/', movieRoutes);
 app.use('/detailMovie', movieRoutes);
 app.use('/register', movieRoutes);
-app.use('/login', movieRoutes);
+app.use('/login', movieRoutes); */
+
+app.use('/movieCreate', movieRoutes);

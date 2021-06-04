@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes)=>{
-    let alias = 'genres';
-    let columns = {
+    let alias = 'Genre';
+    let cols = {
         id: {
             type: dataTypes.INTEGER,
             primaryKey:  true,
@@ -36,19 +36,19 @@ module.exports = (sequelize, dataTypes)=>{
         timestamps : true
     };
 // Relacion de tablas 
-    const Genre = sequelize.define(alias, columns, config);
+    const Genre = sequelize.define(alias, cols, config);
 
     Genre.associate = function(models) {
 
-        Genre.belongsTo(models.Movies, {
+        Genre.hasMany(models.Movie, {
             as: "movies",
-            foreignKey : "id"
-        });      // de 1 a muchos
+            foreignKey : "genre_id"
+        });  
 
 /*         Genre.hasMany(models.Actors, {
             as: "actors",
             foreignKey : "id"
-        })  */   // de muchos a 1
+        })  */  
 
     }
     return Genre;

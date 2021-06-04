@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('partials/head') %>
+        <title>cineZeta - Registro</title>
+            </head>
+
+    <body>
+        <!--HEADER-->
+        <%- include('partials/header') %>
+            <!-- FIN HEADER -->
+            
+            <!--FORMULARIO-->
+
+            <div class="container-form">
+                <div> <img class="cuervoBart" src="../img/cuervoIzq.png" alt=""></div>
+                <!--REGISTRO-->
+                <form class="formulario-registro" action="/movieCreate" method="POST"
+                    id="form">
+                    <div class="control-form">
+                        <label></label>
+                        <input type="text" name="title" placeholder="Titulo" id="title">
+                        <!--                 <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small> -->
+                    </div>
+
+                    <div class="control-form">
+                        <label></label>
+                        <input type="text" name="awards" class="control" placeholder="Premios" id="awards">
+                        <!--                 <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small> -->
+
+                    </div>
+
+                    <div class="control-form">
+                        <label></label>
+                        <input type="text" name="length" class="control" placeholder="Duración" id="length">
+                        <!--                 <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small> -->
+                    </div>
+
+                    <div class="control-form">
+                        <label></label>
+                        <input type="text" name="rating" class="control" placeholder="Rating"
+                            id="rating">
+                        <!--                 <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small> -->
+                    </div>
+
+                    <div class="control-form">
+                        <label></label>
+                        <input type="text" name="release_date" class="control" placeholder="Fecha de Estreno"
+                            id="release_date">
+                        <!--                 <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small> -->
+                    </div>
+
+                    <div class="control-form">
+                        <label></label>
+                        <select type="text" name="genres" class="control" placeholder="Generos"
+                            id="genres">
+                            <% for (let i = 0; i <generos.length; i++) { %>
+                            <option value="<%=generos[i].id%>"> 
+                                <%=generos[i].name%>
+                            </option>
+                            <% } %>
+                        </select>
+
+                    <button class="control-button" type="submit"> Registrarse </button>
+
+                </form>
+                <div> <img class="cuervoBart" src="../img/cuervoDer.png" alt=""></div>
+            </div>
+
+    </body>
+
+</html>
