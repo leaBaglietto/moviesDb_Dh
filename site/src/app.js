@@ -21,9 +21,9 @@ app.set('views', './views');
  const movieRoutes=require('./routes/movieRoutes');
 
 
-/* app.use('/', movieRoutes);
+app.use('/', movieRoutes);
 app.use('/detailMovie', movieRoutes);
 app.use('/register', movieRoutes);
-app.use('/login', movieRoutes); */
+app.use('/login', movieRoutes); 
 
 app.use('/movieCreate', movieRoutes);

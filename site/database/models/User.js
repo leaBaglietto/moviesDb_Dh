@@ -1,6 +1,6 @@
-/* module.exports = (sequelize, dataTypes)=>{
+module.exports = (sequelize, dataTypes)=>{
     let alias = 'User';
-    let columns = {
+    let cols = {
         id: {
             type: dataTypes.INTEGER,
             primaryKey:  true,
@@ -47,4 +47,4 @@
         timestamps : true
     };
     return User;
-} */
+} 
