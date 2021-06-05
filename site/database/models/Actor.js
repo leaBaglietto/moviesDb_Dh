@@ -7,11 +7,11 @@ module.exports = (sequelize, dataTypes)=>{
             autoIncrement: true,
         },
 
-        created_at: {
+        createdAt: {
             type: dataTypes.DATE,
             allowNull: true
         },
-        updated_at: {
+        updatedAt: {
             type: dataTypes.DATE,
             allowNull: true
         },
