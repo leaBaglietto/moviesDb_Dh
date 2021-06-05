@@ -9,7 +9,7 @@ router.get ('/register',movieController.register);
 router.get ('/login',movieController.login);
 
 //Crear Películas
-router.get("/movie/create",movieController.movieCreate);
+router.get("/movieCreate",movieController.movieCreate);
 
 
 module.exports = router;

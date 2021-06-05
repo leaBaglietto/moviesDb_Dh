@@ -1,6 +1,5 @@
 // llamo a mi base de datos
-/*  const db = require("../../database/models");  */
-
+const db = require("../../database/models"); 
 const controller = {
     index: (req,res) => {
     res.render('index');
@@ -21,7 +20,7 @@ const controller = {
     movieCreate: (req, res) => {
         db.Genre.findAll()  // Genre es el alias del nombre que le pusimos al modelo de Generos.
         .then(function(genres){
-            return res.render("movieCreate", {genres:genres});
+            return res.render("Create", {genres:genres});
         })
     },
   
