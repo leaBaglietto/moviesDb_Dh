@@ -59,10 +59,12 @@
                         <label></label>
                         <select type="text" name="genres" class="control" placeholder="Generos"
                             id="genres">
-                            <% for (let i = 0; i <generos.length; i++) { %>
-                            <option value="<%=generos[i].id%>"> 
-                                <%=generos[i].name%>
+                            <% if (genres) { %>
+                            <% for (let i = 0; i <genres.length; i++) { %>
+                            <option value="<%=genres[i].id%>"> 
+                                <%=genres[i].name%>
                             </option>
+                            <% } %>
                             <% } %>
                         </select>
 

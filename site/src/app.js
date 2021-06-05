@@ -19,11 +19,12 @@ app.set('views', './views');
 
 //Rutas
  const movieRoutes=require('./routes/movieRoutes');
+ const userRoutes=require('./routes/userRoutes');
 
-
+app.use('/home', movieRoutes); 
 app.use('/', movieRoutes);
-app.use('/detailMovie', movieRoutes);
-app.use('/register', movieRoutes);
-app.use('/login', movieRoutes); 
 
-app.use('/movieCreate', movieRoutes);
+app.use('/movies', movieRoutes);
+
+app.use('/users', userRoutes);
+

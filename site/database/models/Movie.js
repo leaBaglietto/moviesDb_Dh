@@ -7,11 +7,11 @@ module.exports = (sequelize, dataTypes)=>{
             autoIncrement: true,
         },
 
-        created_at: {
+        createdAt: {
             type: dataTypes.DATE,
             allowNull: true
         },
-        updated_at: {
+        updatedAt: {
             type: dataTypes.DATE,
             allowNull: true
         },
@@ -51,7 +51,7 @@ module.exports = (sequelize, dataTypes)=>{
     };
     let config = {
         tableName : 'movies',
-        timestamps : true
+        timestamps : true 
     };
 // Relacion de tablas 
     const Movie = sequelize.define(alias, cols, config);
@@ -69,11 +69,6 @@ module.exports = (sequelize, dataTypes)=>{
                 otherKey: "actor_id",
                 timestamps: true // La tabla pivot tiene timestamp
             }); // de Muchos a muchos
-
-        /* Movie.hasMany(models.Actors, {
-            as: "actors",
-            foreignKey : "id"
-        }) // de muchos a 1 */
     }
     return Movie;
 }
