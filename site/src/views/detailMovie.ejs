@@ -10,18 +10,41 @@
         <%- include('partials/header') %>
             <!-- FIN HEADER -->
             <div class="container_movieDetail">
-                <div class="movie_card">
-                    <img src="../img/army.jpg" alt="" class="image_movie">
-                    <h4>Nombre de la películas</h4>
+                    <h4><%=movies.title%></h4>
+                    <ul>
+                        <li>
+                            Duración: <%=movies.length%> 
+                        </li>
+
+                        <li>
+                            Premios: <%=movies.awards%> 
+                        </li>
+                        
+                        <li>
+                            Rating: <%=movies.rating%> 
+                        </li>
+                    
+                        <li>
+                       
+                        Genero: <%=movies.genre.name%> 
+                        </li>
+                    
+                        <li>
+                            Actores:
+                            <ul>
+                                <%  movies.forEach (actors=>{ %>
+                                 <li>
+                                     <%= movie.actors[i].first_name%> <%= movie.actors[i].last_name%>
+                                 </li>
+                                 <% }) %>
+                             </ul>
+                        </li>
+                    
+                    </ul>
                 </div>
-                <div class="container_movie_detail">
-                    <div class="detail_card"> Sinopsis: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Possimus totam ipsam officia ipsum maxime, eum nisi minima soluta similique repellendus
-                        blanditiis aperiam id expedita laudantium! Cupiditate, sit quidem. Consequatur, odio?</div>
-                    <hr>
-                    <div class="detail_card"> Genero: </div>
-                    <div class="detail_card"> Actores:</div>
-                </div>
+                <a href="">
+                <button>Modificar</button>
+                </a>
             </div>
     </body>
 
