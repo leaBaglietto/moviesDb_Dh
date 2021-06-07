@@ -75,8 +75,14 @@ res.redirect("/movies/" + req.params.id);
             where: {
                 id: req.params.id
             }
-        });
-        res.redirect("/");
+        })
+.then(function (movie) {
+        db.Movie.findAll()
+            .then(function (movies) {
+                return res.render("index", { movies: movies });
+            })
+        })
+/*         res.redirect("/"); */
     },
 
 

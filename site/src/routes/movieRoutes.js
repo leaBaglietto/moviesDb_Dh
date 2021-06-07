@@ -15,10 +15,10 @@ router.get('/:id', movieController.detail);
 
 // Modificación de Película
 router.get("/movieEdit/:id", movieController.edit);
-router.post("/movieEdit/:id", movieController.update);
+router.put("/movieEdit/:id", movieController.update);
 
 // Eliminar Película
-router.post("/movieDelete/:id", movieController.delete);
+router.delete("/movieDelete/:id", movieController.delete);
 
 
 
