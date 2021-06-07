@@ -13,21 +13,15 @@
             <!--CATALOGO DE PELICULAS-->
             <section class="movie_list">
                 <h2>DISFRUTA DEL MEJOR CINE</h2>
-                <div class="movie_container">
-                    <!-- Tarjeta de pelicula -->
-                    <% if (movies) { %>
-                        <ul>
-                           <%  movies.forEach (movie=>{ %>
-                            <li>
-                                <%= movie.title %>
-                            </li>
-                            <% }) %>
-                        </ul>
-                     <% } %>
-                    
-                    <!-- ------------------ -->
-                
-                </div>
+               <ul>
+                   <% for (let i=0; i < movies.length; i++) { %> 
+                    <li>
+                        <a href="/movies/<%=movies[i].id%>">
+                        <%=movies[i].title%> 
+                    </a>
+                    </li>
+                    <% } %> 
+               </ul>
             </section>
             <!--FIN CATALOGO DE PELICULAS-->
     </body>

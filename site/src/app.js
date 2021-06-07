@@ -4,7 +4,7 @@ const app = express();
 
 const methodOverride = require('method-override');
 
-const publicPath = path.resolve(__dirname, "/public");
+const publicPath = path.resolve(__dirname, "../../public");
 app.use(express.static(publicPath));
 
 // Configuracion de servidor local

@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <%- include('partials/head') %>
-        <title>cineZeta - Registro</title>
+        <title>cineZeta - Editar Pelicula</title>
             </head>
 
     <body>
@@ -19,14 +19,14 @@
                     id="form">
                     <div class="control-form">
                         <label></label>
-                        <input type="text" name="title" placeholder="Titulo" id="title">
+                        <input type="text" name="title" placeholder="Titulo" id="title" value="<%=movies.title%>">
                         <!--                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small> -->
                     </div>
 
                     <div class="control-form">
                         <label></label>
-                        <input type="text" name="awards" class="control" placeholder="Premios" id="awards">
+                        <input type="text" name="awards" class="control" placeholder="Premios" id="awards" value="<%=movies.awards%>">
                         <!--                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small> -->
 
@@ -34,7 +34,7 @@
 
                     <div class="control-form">
                         <label></label>
-                        <input type="text" name="length" class="control" placeholder="Duración" id="length">
+                        <input type="text" name="length" class="control" placeholder="Duración" id="length" value="<%=movies.length%>">
                         <!--                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small> -->
                     </div>
@@ -42,7 +42,7 @@
                     <div class="control-form">
                         <label></label>
                         <input type="text" name="rating" class="control" placeholder="Rating"
-                            id="rating">
+                            id="rating" value="<%=movies.rating%>">
                         <!--                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small> -->
                     </div>
@@ -61,14 +61,21 @@
                             id="genres">
                             <% if (genres) { %>
                             <% for (let i = 0; i <genres.length; i++) { %>
-                            <option value="<%=genres[i].id%>"> 
-                                <%=genres[i].name%>
-                            </option>
+                                <% if (genres[i].id == movies.genre_id) { %>
+                                    <option value="<%=genres[i].id%>" selected> 
+                                        <%=genres[i].name%>
+                                    </option>
+                                    <% } else { %>
+                                        <option value="<%=genres[i].id%>"> 
+                                            <%=genres[i].name%>
+                                        </option>
+                                        <% } %> 
+
                             <% } %>
                             <% } %>
                         </select>
 
-                    <button class="control-button" type="submit" action="./home"> Crear </button>
+                    <button class="control-button" type="submit"> Modificar </button>
 
                 </form>
                 <div> <img class="cuervoBart" src="../img/cuervoDer.png" alt=""></div>
