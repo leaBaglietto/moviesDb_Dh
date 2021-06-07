@@ -11,12 +11,11 @@ const controller = {
     // Detalle de la Película
     detail: (req, res) => {
         console.log(req.params.id)
-        db.Movie.findByPk(req.params.id)/* ,  {
+        db.Movie.findByPk(req.params.id,  {
                 include: [{association: "genre"}, {association: "actors"}]
-            }) */
+            })
             .then(function (movie) {
-                console.log(movie.title)
-                res.render("detailMovie", { movie: movie });
+              res.render("detailMovie", { movie: movie });
             })
     },
 
@@ -76,12 +75,11 @@ res.redirect("/movies/" + req.params.id);
                 id: req.params.id
             }
         })
-.then(function (movie) {
-        db.Movie.findAll()
+.then( db.Movie.findAll()
             .then(function (movies) {
                 return res.render("index", { movies: movies });
             })
-        })
+        )
 /*         res.redirect("/"); */
     },
 

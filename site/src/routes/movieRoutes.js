@@ -18,7 +18,7 @@ router.get("/movieEdit/:id", movieController.edit);
 router.put("/movieEdit/:id", movieController.update);
 
 // Eliminar Película
-router.delete("/movieDelete/:id", movieController.delete);
+router.delete("/movieEdit/:id", movieController.delete);
 
 
 
