@@ -21,7 +21,4 @@ router.put("/movieEdit/:id", movieController.update);
 router.delete("/movieEdit/:id", movieController.delete);
 
 
-
-
-
 module.exports = router;

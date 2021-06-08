@@ -23,6 +23,7 @@
                         <li>
                             Rating: <%=movie.rating%> 
                         </li>
+                        <!-- ---------------- -->
                     <li>
                        
                         Genero: <%=movie.genre.name%> 
@@ -31,15 +32,17 @@
                         <li>
                             Actores:
                             <ul>
-                                <%  movies.forEach (actors=>{ %>
-                                    <li>
-                                        <%= movie.actors[i].first_name%> <%= movie.actors[i].last_name%>
-                                    </li>
-                                    <% }) %>
-                                </ul>
-                           </li> 
+                                <% if (movie) { %>
+                                    <% for (let i = 0; i < movie.actors.length; i++) { %>
+                                        <li>
+                                            <%= movie.actors[i].first_name%> <%= movie.actors[i].last_name%>
+                                        </li>
+                                    <% } %>
+                                <% } %>
+                            </ul>
+                        </li>
    
-   
+                           <!-- ---------------- -->
                     
                     </ul>
                 </div>

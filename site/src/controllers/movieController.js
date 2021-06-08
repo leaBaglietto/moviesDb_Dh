@@ -10,12 +10,12 @@ const controller = {
     },
     // Detalle de la Película
     detail: (req, res) => {
-        console.log(req.params.id)
+
         db.Movie.findByPk(req.params.id,  {
                 include: [{association: "genre"}, {association: "actors"}]
             })
             .then(function (movie) {
-              res.render("detailMovie", { movie: movie });
+              res.render("detailMovie", { movie:movie });
             })
     },
 
