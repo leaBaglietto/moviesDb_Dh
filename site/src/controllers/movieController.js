@@ -10,7 +10,6 @@ const controller = {
     },
     // Detalle de la Película
     detail: (req, res) => {
-
         db.Movie.findByPk(req.params.id,  {
                 include: [{association: "genre"}, {association: "actors"}]
             })
