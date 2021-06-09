@@ -55,22 +55,6 @@ module.exports = (sequelize, dataTypes)=>{
             otherKey: "movie_id",
             timestamps: true // la tabla intermedia tiene timestamps
         }); // de Muchos a muchos
-        
-        /*         Actor.belongsTo(models.Genres, {
-            as: "genres",
-            foreignKey : "id"
-        }); */ // de 1 a muchos
-
-        /* Actor.belongsTo(models.Movies, {
-            as: "movies",
-            foreignKey : "id"
-        }); // de 1 a muchos
-
-        Actor.hasMany(models.Movies, {
-            as: "movies",
-            foreignKey : "id"
-        }) // de muchos a 1
- */
     }
     return Actor;
 }

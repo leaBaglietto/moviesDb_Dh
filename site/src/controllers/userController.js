@@ -12,16 +12,43 @@ const controller = {
         db.Users.create({
             name: req.body.fullname,
             email: req.body.email,
-            password: req.body.password /* bcryptjs.hashSync(req.body.password, 10) */
+            password:  bcryptjs.hashSync(req.body.password, 10) 
         })
             .then(() => res.redirect("/users/login"));
     },
 
     // -----------------------------------------------
- /*    login: (req, res) => {
-        res.render('index');
-    }, */
-};
+login: (req, res) => {
+        res.render('login');
+    }, 
+
+    loginProcess: (req, res) => {
+		let userToLogin = loginTable.findByField('email', req.body.email);
+		
+		if(userToLogin) {
+			let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
+			if (isOkThePassword) {
+				delete userToLogin.password;
+				req.session.userLogged = userToLogin;
+
+				return res.redirect('/user/profile');
+			} 
+			return res.render('userLogin', {
+				errors: {
+					email: {
+						msg: 'Las credenciales son inválidas'
+					}
+				}
+			});
+		}
+		return res.render('userLogin', {
+			errors: {
+				email: {
+					msg: 'No se encuentra este email en nuestra base de datos'
+				}
+			}
+		});
+}};
 
 
 module.exports = controller;
