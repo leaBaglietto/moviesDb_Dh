@@ -1,27 +1,27 @@
-const db = require("../../database/models"); 
+const db = require("../../database/models");
 const bcryptjs = require('bcryptjs');
 
 const controller = {
-    // Registro de Usuario
-    register: (req,res) => {
+ //formulario de registro
+    register: (req, res) => {
         res.render('register');
-        },
-        processRegister: (req,res) => {
-            db.User.create({
-                name: req.body.name,
-                email: req.body.email,
-                password: req.body.password,
-            });
-    
-            res.redirect('home');
-        },
-// -----------------------------------------------
-        login: (req,res) => {
-            res.render('login');
-            },
+    },
+    // Registro de Usuario
+    processRegister: (req, res) => {
+        console.log (registro)
+        db.Users.create({
+            name: req.body.fullname,
+            email: req.body.email,
+            password: bcryptjs.hashSync(req.body.password, 10)
+        })
+            .then(() => res.redirect("/users/login"));
+    },
+
+    // -----------------------------------------------
+ /*    login: (req, res) => {
+        res.render('index');
+    }, */
 };
-
-
 
 
 module.exports = controller;

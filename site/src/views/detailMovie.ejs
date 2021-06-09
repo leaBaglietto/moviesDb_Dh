@@ -1,60 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <%- include('partials/head') %>
+
+<head>
+    <%- include('partials/head') %>
         <title>Detalle de Pelicula</title>
-            </head>
+</head>
 
-    <body>
-        <!--HEADER-->
-        <%- include('partials/header') %>
-            <!-- FIN HEADER -->
-            <div class="container_movieDetail">
-                    <h4><%=movie.title%></h4>
+<body>
+    <!--HEADER-->
+    <%- include('partials/header') %>
+        <!-- FIN HEADER -->
+        <div class="container_movieDetail">
+            <h4>
+                <%=movie.title%>
+            </h4>
+            <ul>
+                <li> Duración: <%=movie.length%>
+                </li>
+
+                <li> Premios: <%=movie.awards%>
+                </li>
+
+                <li> Rating: <%=movie.rating%>
+                </li>
+                <li> Genero: <%=movie.genre.name%>
+                </li>
+
+                <li>
+                    Actores:
                     <ul>
-                        <li>
-                            Duración: <%=movie.length%> 
-                        </li>
-
-                        <li>
-                            Premios: <%=movie.awards%> 
-                        </li>
-                        
-                        <li>
-                            Rating: <%=movie.rating%> 
-                        </li>
-                        <!-- ---------------- -->
-                    <li>
-                       
-                        Genero: <%=movie.genre.name%> 
-                        </li> 
-                     
-                        <li>
-                            Actores:
-                            <ul>
-                                <% if (movie) { %>
-                                    <% for (let i = 0; i < movie.actors.length; i++) { %>
-                                        <li>
-                                            <%= movie.actors[i].first_name%> <%= movie.actors[i].last_name%>
-                                        </li>
-                                    <% } %>
+                        <% if (movie) { %>
+                            <% for (let i=0; i < movie.actors.length; i++) { %>
+                                <li>
+                                    <%= movie.actors[i].first_name%>
+                                        <%= movie.actors[i].last_name%>
+                                </li>
                                 <% } %>
-                            </ul>
-                        </li>
-   
-                           <!-- ---------------- -->
-                    
+                                    <% } %>
                     </ul>
-                </div>
-                <a href="/movies/movieEdit/<%=movie.id%> ">
+                </li>
+
+                <!-- ---------------- -->
+
+            </ul>
+        </div>
+        <div class="buttonDetail">
+            <a href="/movies/movieEdit/<%=movie.id%> ">
                 <button>Modificar</button>
-                </a>
+            </a>
 
-                    <form action="/movies/movieEdit/<%=movie.id%>?_method=DELETE" method="POST">
-                        <button type="submit">Eliminar</button>
-                    </form>
-
-            </div>
-    </body>
+            <form action="/movies/movieEdit/<%=movie.id%>?_method=DELETE" method="POST">
+                <button type="submit">Eliminar</button>
+            </form>
+        </div>
+        </div>
+</body>
 
 </html>

@@ -5,10 +5,10 @@ const userController = require ('../controllers/userController');
 
 // Registro de usuario
 router.get ('/register',userController.register);
-/* router.post('/register', userController.processRegister); */
+router.post('/register', userController.processRegister);
 
 
-router.get ('/login',userController.login);
+/* router.get ('/login',userController.login); */
 
 
 
