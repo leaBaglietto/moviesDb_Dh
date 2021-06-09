@@ -1,11 +1,19 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const session = require ('express-session')
 
 const methodOverride = require('method-override');
 
 const publicPath = path.resolve(__dirname, "../../public");
 app.use(express.static(publicPath));
+
+// Express session
+app.use (session ({
+    secret:"shhh it's a secret",
+    resave: false,
+    saveUninitialized: false,
+}));
 
 // Configuracion de servidor local
 

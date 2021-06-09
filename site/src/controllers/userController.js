@@ -12,7 +12,7 @@ const controller = {
         db.Users.create({
             name: req.body.fullname,
             email: req.body.email,
-            password: bcryptjs.hashSync(req.body.password, 10)
+            password: req.body.password /* bcryptjs.hashSync(req.body.password, 10) */
         })
             .then(() => res.redirect("/users/login"));
     },
