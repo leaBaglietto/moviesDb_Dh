@@ -13,4 +13,7 @@ express-session (para manejar sesiones de usuarios)
 express-validator (No seria necesario por que el challenge no tiene para hacer validaciones en backend, si me da el tiempo las hago pero en front)
 method-override (para manejar metodos put y delete)
 mysql2
-sequelize
+sequelize.
+
+
+*¡NOTA IMPORTANTE!* le realice una pequeña modificacion a la base de datos que me enviaron les aviso por si no les funciona, la que toque esta en la carpeta *db* 
