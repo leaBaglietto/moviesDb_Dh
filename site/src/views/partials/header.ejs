@@ -8,9 +8,22 @@
 
     <nav class="nav_bar">
         <ul>
+            <% if (locals.user) { %>
+                <% if (locals._locals.session.auth) { %>           
             <li><a href="/users/login">Login</a></li>
             <li><a href="/users/register">Registrarse</a></li>
             <li><a href="/movies/movieCreate">Crear Película</a></li>
+            <li>Hola <%= locals.user %></li>
+            <li><a href="/users/logout"></a>Cerrar Sesión</li>
+            <% } else  { %>
+                <li>Hola <%= locals.user %></li>
+            <li><a href="/users/logout"></a>Cerrar Sesión</li>
+            <% } %>
+            <% } else  { %>
+                <li><a href="/users/login">Login</a></li>
+                <li><a href="/users/register">Registrarse</a></li>
+                <% } %>
+
         </ul>
     </nav>
 </div>

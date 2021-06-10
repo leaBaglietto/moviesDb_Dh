@@ -45,13 +45,19 @@
             </ul>
         </div>
         <div class="buttonDetail">
-            <a href="/movies/movieEdit/<%=movie.id%> ">
-                <button>Modificar</button>
-            </a>
+            <% if (locals.user) { %>
+                <% if (locals._locals.session.auth) { %>   
+                    <a href="/movies/movieEdit/<%=movie.id%> ">
+                        <button>Modificar</button> </a>
 
-            <form action="/movies/movieEdit/<%=movie.id%>?_method=DELETE" method="POST">
-                <button type="submit">Eliminar</button>
-            </form>
+                    <form action="/movies/movieEdit/<%=movie.id%>?_method=DELETE" method="POST">
+                        <button type="submit">Eliminar</button>
+                    </form>
+                    <a href="/">Volver</a>
+                    <% } %>
+                        <% } else { %>
+                            <a href="/">Volver</a>
+                            <% } %>
         </div>
         </div>
 </body>
