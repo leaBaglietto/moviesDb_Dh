@@ -16,4 +16,9 @@ mysql2
 sequelize.
 
 
-*¡NOTA IMPORTANTE!* le realice una pequeña modificacion a la base de datos que me enviaron les aviso por si no les funciona, sequilize no me tomaba las columnas created_at o update_at y las tuve que cambiar por createdAt idem con update. 
+*¡NOTA IMPORTANTE!* le realice una pequeña modificacion a la base de datos que me enviaron les aviso por si no les funciona, sequilize no me tomaba las columnas created_at o update_at y las tuve que cambiar por createdAt idem con update. Tambien Agregue la columna DeletedAt para realizar el paranoid. 
+
+
+Usuario admin
+usuario: lean@lean.com
+pass: 123
