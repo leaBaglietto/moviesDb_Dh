@@ -12,7 +12,7 @@ const controller = {
         console.log(req.body)
         db.User.findOne({
             where: {
-                email: req.body
+                email: req.body.email
             }
         })
             .then(function (user) {
