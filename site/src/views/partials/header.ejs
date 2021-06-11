@@ -11,14 +11,12 @@
 
             <% if (locals.user) { %>
                 <% if (locals.user.rol) { %>           
-            <li><a href="/users/login">Login</a></li>
-            <li><a href="/users/register">Registrarse</a></li>
             <li><a href="/movies/movieCreate">Crear Película</a></li>
-            <li> | Hola <%= locals.user.name %></li>
-            <li><a href="/users/logout">Cerrar Sesión</a></li>
+            <li class="User"> | Hola <%= locals.user.name %></li>
+            <li ><a class="User" href="/users/logout">Cerrar Sesión</a></li>
             <% } else  { %> 
 
-                <li> | Hola <%= locals.user %></li>
+                <li class="User"> | Hola <%= locals.user %></li>
             <li><a href="/users/logout">Cerrar Sesión</a></li>
             <% } %>
             <% } else  { %>
