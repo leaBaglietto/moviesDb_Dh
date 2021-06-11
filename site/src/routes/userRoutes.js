@@ -2,15 +2,12 @@ const express = require('express');
 const router = express.Router();
 
 const userController = require ('../controllers/userController');
-
-const guestMiddleware = require ('../middlewares/guestMiddleware');
-
 const authMiddleware = require('../middlewares/authMiddleware');
 
 
 // Registro de usuario
     //Form registro
-router.get ('/register',guestMiddleware,userController.register);
+router.get ('/register',userController.register);
     //Procesar registro
 router.post('/register', userController.processRegister);
 
@@ -18,7 +15,7 @@ router.post('/register', userController.processRegister);
 
 // Logeo de usuario
     // Form Login
-router.get ('/login',guestMiddleware,userController.login);
+router.get ('/login',userController.login);
     //Procesar login
 router.post('/login', userController.processLogin);
     //Procesar logout

@@ -9,14 +9,15 @@ const controller = {
     // Proceso de Registro de Usuario
     processRegister: (req, res) => {
         // Buscamos la existencia del usuario
+        console.log(req.body)
         db.User.findOne({
             where: {
-                email: req.body.email
+                email: req.body
             }
         })
             .then(function (user) {
                 if (!user) {//Si no esta el usuario lo crea
-                    db.Users.create({
+                    db.User.create({
                         name: req.body.name,
                         email: req.body.email,
                         password: req.body.password,
@@ -46,7 +47,8 @@ const controller = {
         res.render('login');
     },
     processLogin: (req, res) => {
-        db.Users.findOne({
+        console.log(req.body)
+        db.User.findOne({
             where: {
                 email: req.body.email
             }
