@@ -51,7 +51,7 @@ module.exports = (sequelize, dataTypes)=>{
     };
     let config = {
         tableName : 'movies',
-        timestamps : true 
+        timestamps : true,
     };
 // Relacion de tablas 
     const Movie = sequelize.define(alias, cols, config);

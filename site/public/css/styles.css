@@ -40,10 +40,15 @@ body {
     color: rgb(255, 195, 0);
    }
 
+
 img {
-    width: 200px;
+    width: 250px;
     height: auto;
     margin-bottom: 0px;
+}
+
+.User {
+    color: white;
 }
 
 
@@ -56,6 +61,35 @@ margin: auto;
 display: flex;
 flex-direction: column;
 align-items: center;
+
+}
+
+.list_container {
+    background-color: rgb(255, 195, 0);
+    width: 40%;
+    height: auto;
+    display: block;
+    margin: auto;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+.list_container ul li {
+    list-style: none;
+    margin:10px;
+    padding: 0px;
+}
+
+.list_container a {
+    text-decoration: none;
+    color: rgb(88, 24, 69);
+}
+
+.list_container a:hover  {
+    text-decoration: none;
+    color: rgb(88, 24, 69);
+    font-weight:900;
+    font-size: 1.25em;
 }
 
 h2{
@@ -143,14 +177,17 @@ hr {
 /* CSS FORMULARIO DE REGISTRO */ 
 
 .container-form {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    margin: 200px auto;
-    width: 80%;
+    display: block;
+    margin: auto;
+    margin-top: 200px;
+    width: 50%;
     height: auto;
     text-align: center;
+}
+
+.cuervoBart {
+    width: 10%;
+    height: auto;
 }
 
 .formulario-registro {
