@@ -46,7 +46,7 @@
         </div>
         <div class="buttonDetail">
             <% if (locals.user) { %>
-                <% if (locals._locals.session.auth) { %>   
+                <% if (locals.user.rol) { %>   
                     <a href="/movies/movieEdit/<%=movie.id%> ">
                         <button>Modificar</button> </a>
 

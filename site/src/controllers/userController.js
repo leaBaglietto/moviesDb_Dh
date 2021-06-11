@@ -56,8 +56,10 @@ const controller = {
             .then(function (user) {
                 // si existe el usuario y la contrasenia es correcta
                 if (user && user.email == req.body.email) {
-                    req.session.user = user.name;
-                    if (user.rol == 1) {
+                    req.session.user = user;
+                    res.locals.user = user;
+                    console.log(user);
+                    if (user.rol) {
                         req.session.auth = true;
                     } else {
                         req.session.auth = false;
@@ -68,6 +70,7 @@ const controller = {
                     res.render('login');
                 }
             })
+        
     },
 
     // PROCESO DE LOGOUT
