@@ -69,16 +69,21 @@ res.redirect("/movies/" + req.params.id);
 
     // Eliminar pelicula
     delete: (req, res) => {
+        const id = Number(req.params.id)
         db.Movie.destroy({
             where: {
-                id: req.params.id
+                id: id
             }
         })
-.then( db.Movie.findAll()
+        .then(() => {
+            res.redirect("/");
+        })
+        .catch(error => console.log(error))
+/* .then( db.Movie.findAll()
             .then(function (movies) {
                 return res.render("index", { movies: movies });
             })
-        )
+        ) */
 /*         res.redirect("/"); */
     },
 

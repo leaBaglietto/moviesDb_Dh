@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 11, 2021 at 12:25 PM
+-- Generation Time: Jun 11, 2021 at 07:46 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.1
 
@@ -480,38 +480,42 @@ CREATE TABLE `movies` (
   `awards` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `release_date` datetime NOT NULL,
   `length` int(10) UNSIGNED DEFAULT NULL,
-  `genre_id` int(10) UNSIGNED DEFAULT NULL
+  `genre_id` int(10) UNSIGNED DEFAULT NULL,
+  `deletedAt` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `movies`
 --
 
-INSERT INTO `movies` (`id`, `createdAt`, `updatedAt`, `title`, `rating`, `awards`, `release_date`, `length`, `genre_id`) VALUES
-(1, NULL, NULL, 'Avatar', '7.9', 3, '2010-10-04 00:00:00', 120, 5),
-(2, NULL, NULL, 'Titanic', '7.7', 11, '1997-09-04 00:00:00', 320, 3),
-(3, NULL, NULL, 'La Guerra de las galaxias: Episodio VI', '9.1', 7, '2004-07-04 00:00:00', NULL, 5),
-(4, NULL, NULL, 'La Guerra de las galaxias: Episodio VII', '9.0', 6, '2003-11-04 00:00:00', 180, 5),
-(5, NULL, NULL, 'Parque Jurasico', '8.3', 5, '1999-01-04 00:00:00', 270, 5),
-(6, NULL, '2021-06-07 20:06:06', 'Harry Potter y las Reliquias de la Muerte - Parte 2', '9.0', 20, '2021-06-16 00:00:00', 190, 6),
-(7, NULL, NULL, 'Transformers: el lado oscuro de la luna', '0.9', 1, '2005-07-04 00:00:00', NULL, 5),
-(8, NULL, NULL, 'Harry Potter y la piedra filosofal', '10.0', 1, '2008-04-04 00:00:00', 120, 8),
-(9, NULL, NULL, 'Harry Potter y la cámara de los secretos', '3.5', 2, '2009-08-04 00:00:00', 200, 8),
-(10, NULL, NULL, 'El rey león', '9.1', 3, '2000-02-04 00:00:00', NULL, 10),
-(11, NULL, NULL, 'Alicia en el país de las maravillas', '5.7', 2, '2008-07-04 00:00:00', 120, NULL),
-(12, NULL, NULL, 'Buscando a Nemo', '8.3', 2, '2000-07-04 00:00:00', 110, 7),
-(13, NULL, NULL, 'Toy Story', '6.1', 0, '2008-03-04 00:00:00', 150, 7),
-(14, NULL, NULL, 'Toy Story 2', '3.2', 2, '2003-04-04 00:00:00', 120, 7),
-(15, NULL, NULL, 'La vida es bella', '8.3', 5, '1994-10-04 00:00:00', NULL, 3),
-(16, NULL, NULL, 'Mi pobre angelito', '3.2', 1, '1989-01-04 00:00:00', 120, 1),
-(17, NULL, NULL, 'Intensamente', '9.0', 2, '2008-07-04 00:00:00', 120, 7),
-(18, NULL, NULL, 'Carrozas de fuego', '9.9', 7, '1980-07-04 00:00:00', 180, NULL),
-(19, NULL, NULL, 'Big', '7.3', 2, '1988-02-04 00:00:00', 130, 8),
-(20, NULL, NULL, 'I am Sam', '9.0', 4, '1999-03-04 00:00:00', 130, 3),
-(21, NULL, NULL, 'Hotel Transylvania', '7.1', 1, '2012-05-04 00:00:00', 90, 10),
-(22, '2021-06-11 02:14:15', '2021-06-11 02:14:15', 'The Art of Army Darkness', '9.9', 60, '2021-06-09 00:00:00', 200, 2),
-(25, '2021-06-11 04:29:11', '2021-06-11 04:29:11', 'Master of the universe', '3.0', 0, '1989-04-13 00:00:00', 124, 8),
-(26, '2021-06-11 04:30:37', '2021-06-11 04:30:37', 'Goonies', '8.0', 2, '1987-12-19 00:00:00', 120, 8);
+INSERT INTO `movies` (`id`, `createdAt`, `updatedAt`, `title`, `rating`, `awards`, `release_date`, `length`, `genre_id`, `deletedAt`) VALUES
+(1, NULL, NULL, 'Avatar', '7.9', 3, '2010-10-04 00:00:00', 120, 5, NULL),
+(2, NULL, NULL, 'Titanic', '7.7', 11, '1997-09-04 00:00:00', 320, 3, NULL),
+(3, NULL, NULL, 'La Guerra de las galaxias: Episodio VI', '9.1', 7, '2004-07-04 00:00:00', NULL, 5, NULL),
+(4, NULL, NULL, 'La Guerra de las galaxias: Episodio VII', '9.0', 6, '2003-11-04 00:00:00', 180, 5, NULL),
+(5, NULL, NULL, 'Parque Jurasico', '8.3', 5, '1999-01-04 00:00:00', 270, 5, NULL),
+(6, NULL, '2021-06-07 20:06:06', 'Harry Potter y las Reliquias de la Muerte - Parte 2', '9.0', 20, '2021-06-16 00:00:00', 190, 6, NULL),
+(7, NULL, NULL, 'Transformers: el lado oscuro de la luna', '0.9', 1, '2005-07-04 00:00:00', NULL, 5, NULL),
+(8, NULL, NULL, 'Harry Potter y la piedra filosofal', '10.0', 1, '2008-04-04 00:00:00', 120, 8, NULL),
+(9, NULL, NULL, 'Harry Potter y la cámara de los secretos', '3.5', 2, '2009-08-04 00:00:00', 200, 8, NULL),
+(10, NULL, NULL, 'El rey león', '9.1', 3, '2000-02-04 00:00:00', NULL, 10, NULL),
+(11, NULL, NULL, 'Alicia en el país de las maravillas', '5.7', 2, '2008-07-04 00:00:00', 120, NULL, NULL),
+(12, NULL, NULL, 'Buscando a Nemo', '8.3', 2, '2000-07-04 00:00:00', 110, 7, NULL),
+(13, NULL, NULL, 'Toy Story', '6.1', 0, '2008-03-04 00:00:00', 150, 7, NULL),
+(14, NULL, NULL, 'Toy Story 2', '3.2', 2, '2003-04-04 00:00:00', 120, 7, NULL),
+(15, NULL, NULL, 'La vida es bella', '8.3', 5, '1994-10-04 00:00:00', NULL, 3, NULL),
+(16, NULL, NULL, 'Mi pobre angelito', '3.2', 1, '1989-01-04 00:00:00', 120, 1, NULL),
+(17, NULL, NULL, 'Intensamente', '9.0', 2, '2008-07-04 00:00:00', 120, 7, NULL),
+(18, NULL, NULL, 'Carrozas de fuego', '9.9', 7, '1980-07-04 00:00:00', 180, NULL, NULL),
+(19, NULL, NULL, 'Big', '7.3', 2, '1988-02-04 00:00:00', 130, 8, NULL),
+(20, NULL, NULL, 'I am Sam', '9.0', 4, '1999-03-04 00:00:00', 130, 3, NULL),
+(21, NULL, NULL, 'Hotel Transylvania', '7.1', 1, '2012-05-04 00:00:00', 90, 10, NULL),
+(22, '2021-06-11 02:14:15', '2021-06-11 02:14:15', 'The Art of Army Darkness', '9.9', 60, '2021-06-09 00:00:00', 200, 2, NULL),
+(25, '2021-06-11 04:29:11', '2021-06-11 04:29:11', 'Master of the universe', '3.0', 0, '1989-04-13 00:00:00', 124, 8, '2021-06-11 15:57:32'),
+(27, '2021-06-11 15:50:29', '2021-06-11 15:50:29', 'goonies', '8.0', 5, '1987-09-17 00:00:00', 120, 8, '2021-06-11 15:54:38'),
+(28, '2021-06-11 16:03:57', '2021-06-11 16:03:57', 'tomates asesinos', '6.0', 10, '1997-07-17 00:00:00', 120, 1, '2021-06-11 16:04:01'),
+(29, '2021-06-11 19:37:29', '2021-06-11 19:37:29', 'Friday 13th ', '4.0', 20, '1989-03-19 00:00:00', 120, 2, '2021-06-11 19:37:35'),
+(30, '2021-06-11 19:38:46', '2021-06-11 19:38:46', 'friday 13th part 20', '1.0', 2, '1993-02-10 00:00:00', 110, 2, '2021-06-11 19:38:52');
 
 -- --------------------------------------------------------
 
@@ -777,7 +781,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `movies`
 --
 ALTER TABLE `movies`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `seasons`
